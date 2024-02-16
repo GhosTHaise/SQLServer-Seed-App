@@ -48,9 +48,9 @@ namespace Controller
             _temp.RocDirRecords = $"hermes_p\\Files\\{Faker.Address.ZipCode()}{Faker.Address.ZipCode()}\\RECORDS";
             _temp.RocPflabel = _temp.RocPfname;
             _temp.RocPftype = Faker.RandomNumber.Next(-4,4) < 0 ? "HERMES" : "NIXIS";
-            _temp.RocPffileSource = Faker.RandomNumber.Next(-2,3) < 0 ? "CTI" : "SFTP";
+            _temp.RocPffileSource = Faker.RandomNumber.Next(-2,3) <= 0 ? "CTI" : "SFTP";
             _temp.RocSftpuser = Faker.RandomNumber.Next(-2,50) < 0 ? $"{Faker.Address.ZipCode()}{Faker.Address.ZipCode()}" : null;
-            _temp.RocSftphost = (_temp.RocSftpuser != null) ? $"sftp_{Faker.Address.CitySuffix}_records.vocalcom.com" : "";
+            _temp.RocSftphost = (_temp.RocSftpuser != null) ? $"sftp_{Faker.Address.CitySuffix()}_records.vocalcom.com" : "";
             _temp.RocPfactive = Faker.RandomNumber.Next(-4,40) > 0 ? "OUI" : "NON";
             try
             {
