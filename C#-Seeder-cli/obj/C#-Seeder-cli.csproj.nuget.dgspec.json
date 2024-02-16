@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Projets\\Node\\SQLServer-Seed-App\\C#-Seeder-cli\\C#-Seeder-cli.csproj": {}
+    "D:\\Projets\\Node\\SQLServer-Seed-App\\C#-Seeder-cli\\C#-Seeder-cli.csproj": {}
   },
   "projects": {
-    "d:\\Projets\\Node\\SQLServer-Seed-App\\C#-Seeder-cli\\C#-Seeder-cli.csproj": {
+    "D:\\Projets\\Node\\SQLServer-Seed-App\\C#-Seeder-cli\\C#-Seeder-cli.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Projets\\Node\\SQLServer-Seed-App\\C#-Seeder-cli\\C#-Seeder-cli.csproj",
+        "projectUniqueName": "D:\\Projets\\Node\\SQLServer-Seed-App\\C#-Seeder-cli\\C#-Seeder-cli.csproj",
         "projectName": "C#-Seeder-cli",
-        "projectPath": "d:\\Projets\\Node\\SQLServer-Seed-App\\C#-Seeder-cli\\C#-Seeder-cli.csproj",
+        "projectPath": "D:\\Projets\\Node\\SQLServer-Seed-App\\C#-Seeder-cli\\C#-Seeder-cli.csproj",
         "packagesPath": "C:\\Users\\Fitiavana(GhosT)\\.nuget\\packages\\",
-        "outputPath": "d:\\Projets\\Node\\SQLServer-Seed-App\\C#-Seeder-cli\\obj\\",
+        "outputPath": "D:\\Projets\\Node\\SQLServer-Seed-App\\C#-Seeder-cli\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
