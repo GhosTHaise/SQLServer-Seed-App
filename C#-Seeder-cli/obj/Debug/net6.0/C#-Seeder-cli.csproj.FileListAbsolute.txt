@@ -1,0 +1,15 @@
+d:\Projets\Node\SQLServer-Seed-App\C#-Seeder-cli\bin\Debug\net6.0\C#-Seeder-cli.exe
+d:\Projets\Node\SQLServer-Seed-App\C#-Seeder-cli\bin\Debug\net6.0\C#-Seeder-cli.deps.json
+d:\Projets\Node\SQLServer-Seed-App\C#-Seeder-cli\bin\Debug\net6.0\C#-Seeder-cli.runtimeconfig.json
+d:\Projets\Node\SQLServer-Seed-App\C#-Seeder-cli\bin\Debug\net6.0\C#-Seeder-cli.dll
+d:\Projets\Node\SQLServer-Seed-App\C#-Seeder-cli\bin\Debug\net6.0\C#-Seeder-cli.pdb
+d:\Projets\Node\SQLServer-Seed-App\C#-Seeder-cli\obj\Debug\net6.0\C#-Seeder-cli.csproj.AssemblyReference.cache
+d:\Projets\Node\SQLServer-Seed-App\C#-Seeder-cli\obj\Debug\net6.0\C#-Seeder-cli.GeneratedMSBuildEditorConfig.editorconfig
+d:\Projets\Node\SQLServer-Seed-App\C#-Seeder-cli\obj\Debug\net6.0\C#-Seeder-cli.AssemblyInfoInputs.cache
+d:\Projets\Node\SQLServer-Seed-App\C#-Seeder-cli\obj\Debug\net6.0\C#-Seeder-cli.AssemblyInfo.cs
+d:\Projets\Node\SQLServer-Seed-App\C#-Seeder-cli\obj\Debug\net6.0\C#-Seeder-cli.csproj.CoreCompileInputs.cache
+d:\Projets\Node\SQLServer-Seed-App\C#-Seeder-cli\obj\Debug\net6.0\C#-Seeder-cli.dll
+d:\Projets\Node\SQLServer-Seed-App\C#-Seeder-cli\obj\Debug\net6.0\refint\C#-Seeder-cli.dll
+d:\Projets\Node\SQLServer-Seed-App\C#-Seeder-cli\obj\Debug\net6.0\C#-Seeder-cli.pdb
+d:\Projets\Node\SQLServer-Seed-App\C#-Seeder-cli\obj\Debug\net6.0\C#-Seeder-cli.genruntimeconfig.cache
+d:\Projets\Node\SQLServer-Seed-App\C#-Seeder-cli\obj\Debug\net6.0\ref\C#-Seeder-cli.dll
