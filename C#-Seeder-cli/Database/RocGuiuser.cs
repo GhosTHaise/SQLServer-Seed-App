@@ -5,6 +5,8 @@ namespace C__Seeder_cli.Database;
 
 public partial class RocGuiuser
 {
+    
+
     public int RocUserId { get; set; }
 
     public string RocUserName { get; set; } = null!;
