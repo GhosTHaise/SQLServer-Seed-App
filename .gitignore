@@ -1,2 +1,4 @@
 bin/
 ./C#-Seeder-cli/obj/
+*.dll
+*.pdb

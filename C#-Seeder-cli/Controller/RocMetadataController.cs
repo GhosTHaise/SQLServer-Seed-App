@@ -39,17 +39,17 @@ namespace Controller
             string[] rocServiceName = context.RocAccounts.Select(x => x.RocServiceName).ToArray<string>();
             string[] rocPlateformName = context.RocPfs.Select(x => x.RocPflabel).ToArray<string>();
             string[] plateformTaken = GenererValeursAleatoires(Faker.RandomNumber.Next(15, 30), rocPlateformName);
+        
             for (int i = 1; i <= day_difference; i++)
             {
-                int ProcessNow = ProcessID + i;
                 string[] serviceTaken = GenererValeursAleatoires(Faker.RandomNumber.Next(2, 24), rocServiceName);
-
-                Console.WriteLine($"[{ProcessID}]");
-                for (int j = 0; j < Faker.RandomNumber.Next(utils.FileDayInterval.getDaysFileMigrationInterval()[(int)dateCursor.DayOfWeek].min, utils.FileDayInterval.getDaysFileMigrationInterval()[0].max); j++)
+                Console.WriteLine($"[{ProcessID + i}] -> {i} : {Faker.RandomNumber.Next(utils.FileDayInterval.getDaysFileMigrationInterval()[(int)dateCursor.DayOfWeek].min, utils.FileDayInterval.getDaysFileMigrationInterval()[(int)dateCursor.DayOfWeek].max)}({(int)dateCursor.DayOfWeek})");
+                for (int j = 0; j < Faker.RandomNumber.Next(utils.FileDayInterval.getDaysFileMigrationInterval()[(int)dateCursor.DayOfWeek].min, utils.FileDayInterval.getDaysFileMigrationInterval()[(int)dateCursor.DayOfWeek].max); j++)
                 {
-                    NewMetadata(context, ProcessNow, dateCursor, serviceTaken[Faker.RandomNumber.Next(0, serviceTaken.Length - 1)], plateformTaken[Faker.RandomNumber.Next(0, plateformTaken.Length - 1)], j);
+                    
+                    NewMetadata(context, ProcessID + i, dateCursor, serviceTaken[Faker.RandomNumber.Next(0, serviceTaken.Length - 1)], plateformTaken[Faker.RandomNumber.Next(0, plateformTaken.Length - 1)], j);
                 }
-                dateCursor.AddDays(i + 1);
+                dateCursor = dateCursor.AddDays(1);
             }
         }
 
@@ -71,7 +71,7 @@ namespace Controller
             {
                 context.RocMetadata.Add(_temp);
                 context.SaveChanges(); // Save changes to the database
-                Console.WriteLine($"[{i}] : Campaign created.");
+                Console.WriteLine($"[{i}] : Import Export Metadata created.");
             }
             catch (Exception e)
             {
