@@ -27,6 +27,7 @@ var ctlRocGuiUser = new RocGuiUserController(serviceProvider.GetService<WebHelpR
 var ctlRocPfs = new RocPlateformController(serviceProvider.GetService<WebHelpRocContext>());
 var ctlRocCampaign = new RocCampaignController(serviceProvider.GetService<WebHelpRocContext>());
 var ctlRocAccount = new RocAccountController(serviceProvider.GetService<WebHelpRocContext>());
+var ctlRocMetadata = new RocMetadataController(serviceProvider.GetService<WebHelpRocContext>());
 if (int.TryParse(userInput, out selectedOption))
 {
     
@@ -45,7 +46,7 @@ if (int.TryParse(userInput, out selectedOption))
                 ctlRocPfs.GeneratePlateforms();
                 break;
             case 5:
-                //Option5();
+                ctlRocMetadata.GenerateRocMetadata();
                 break;
             default:
                 Console.WriteLine("Invalid option. Please enter a number between 1 and 5.");

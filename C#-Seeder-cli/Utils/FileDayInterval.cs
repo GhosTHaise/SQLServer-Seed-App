@@ -4,8 +4,8 @@ namespace utils
 {
     public class FileDayInterval
     {
-        int max;
-        int min;
+        public int max;
+        public int min;
 
         public FileDayInterval(int _min , int _max)
         {
@@ -15,7 +15,7 @@ namespace utils
     
 
 
-        public Dictionary<int,FileDayInterval> getDaysFileMigrationInterval(){
+        public static Dictionary<int,FileDayInterval> getDaysFileMigrationInterval(){
             Dictionary<int, FileDayInterval> dc = new Dictionary<int, FileDayInterval>
             {
                 { 0, new FileDayInterval(271, 1200) },
@@ -25,7 +25,6 @@ namespace utils
                 { 4, new FileDayInterval(78234,85320)},
                 { 5, new FileDayInterval(83234,86780)},
                 { 6, new FileDayInterval(5234,7780)},
-
             };
 
             return dc;
