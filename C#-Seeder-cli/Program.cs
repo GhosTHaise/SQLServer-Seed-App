@@ -2,8 +2,6 @@
 
 using C__Seeder_cli.Database;
 using Controller;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -27,16 +25,18 @@ var serviceProvider = new ServiceCollection()
 int selectedOption;
 var ctlRocGuiUser = new RocGuiUserController(serviceProvider.GetService<WebHelpRocContext>());
 var ctlRocPfs = new RocPlateformController(serviceProvider.GetService<WebHelpRocContext>());
+var ctlRocCampaign = new RocCampaignController(serviceProvider.GetService<WebHelpRocContext>());
+var ctlRocAccount = new RocAccountController(serviceProvider.GetService<WebHelpRocContext>());
 if (int.TryParse(userInput, out selectedOption))
 {
     
         switch (selectedOption)
         {
             case 1:
-                //Option1();
+                ctlRocAccount.GenerateRocAccount();
                 break;
             case 2:
-                //Option2();
+                ctlRocCampaign.GenerateRocCampaign();
                 break;
             case 3:
                 ctlRocGuiUser.GenerateGuiUser();
