@@ -12,7 +12,7 @@ namespace Controller
 
         public void GenerateRocMetadata()
         {
-            Console.WriteLine("Please enter the number of Day to be generated:");
+            //Console.WriteLine("Please enter the number of Day to be generated:");
             //int userInput = int.Parse(Console.ReadLine() ?? "0");
             String[] PF = context.RocPfs.Select(cc => cc.RocPfname).ToArray<string>();
             int? maxProcessIdStored = context.RocMetadata.Max(m => m.RocRunProcessId) ?? null;
@@ -45,7 +45,7 @@ namespace Controller
                 string[] serviceTaken = GenererValeursAleatoires(Faker.RandomNumber.Next(2, 24), rocServiceName);
 
                 Console.WriteLine($"[{ProcessID}]");
-                for (int j = 0; j < Faker.RandomNumber.Next(utils.FileDayInterval.getDaysFileMigrationInterval()[0].min, utils.FileDayInterval.getDaysFileMigrationInterval()[0].max); i++)
+                for (int j = 0; j < Faker.RandomNumber.Next(utils.FileDayInterval.getDaysFileMigrationInterval()[(int)dateCursor.DayOfWeek].min, utils.FileDayInterval.getDaysFileMigrationInterval()[0].max); j++)
                 {
                     NewMetadata(context, ProcessNow, dateCursor, serviceTaken[Faker.RandomNumber.Next(0, serviceTaken.Length - 1)], plateformTaken[Faker.RandomNumber.Next(0, plateformTaken.Length - 1)], j);
                 }
@@ -62,7 +62,7 @@ namespace Controller
                 RocIsfileexist = "OUI",
                 RocCopySuccess = 1,
                 RocPf = plateform,
-                RocDateToExport = date_insertion.ToString(),
+                RocDateToExport = date_insertion.ToString("yyyy-mm-dd"),
                 RocDateRunProcess = date_insertion,
                 RocFlagRetour = (DateTime.Compare(date_insertion, date_insertion) == 0) ? null : (Faker.RandomNumber.Next(-5, 110) > 0) ? "OK_TO_DELETE" : "NO_RETOUR"
             };
@@ -75,7 +75,7 @@ namespace Controller
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(e);
             }
         }
 

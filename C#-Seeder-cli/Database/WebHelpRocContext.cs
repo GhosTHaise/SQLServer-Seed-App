@@ -120,9 +120,8 @@ public partial class WebHelpRocContext : DbContext
 
         modelBuilder.Entity<RocMetadatum>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("ROC_METADATA");
+            entity.HasKey(e => e.RocId);
+            entity.ToTable("ROC_METADATA");
 
             entity.HasIndex(e => new { e.RocCallPlatform, e.RocRunProcessId }, "IDX_ROC_CALLPLATFORM");
 
@@ -162,7 +161,7 @@ public partial class WebHelpRocContext : DbContext
                 .HasColumnType("datetime")
                 .HasColumnName("ROC_DateRunProcess");
             entity.Property(e => e.RocDateToExport)
-                .HasMaxLength(8)
+                .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasColumnName("ROC_DateToExport");
             entity.Property(e => e.RocDirection)

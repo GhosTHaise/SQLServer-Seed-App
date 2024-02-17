@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace C__Seeder_cli.Database;
 
 public partial class RocMetadatum
 {
+    [Key]
     public int RocId { get; set; }
 
     public DateTime? RocDateRunProcess { get; set; }
