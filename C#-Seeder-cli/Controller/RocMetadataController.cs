@@ -42,14 +42,14 @@ namespace Controller
         
             for (int i = 1; i <= day_difference; i++)
             {
+                dateCursor = dateCursor.AddDays(1);
                 string[] serviceTaken = GenererValeursAleatoires(Faker.RandomNumber.Next(2, 24), rocServiceName);
                 Console.WriteLine($"[{ProcessID + i}] -> {i} : {Faker.RandomNumber.Next(utils.FileDayInterval.getDaysFileMigrationInterval()[(int)dateCursor.DayOfWeek].min, utils.FileDayInterval.getDaysFileMigrationInterval()[(int)dateCursor.DayOfWeek].max)}({(int)dateCursor.DayOfWeek})");
                 for (int j = 0; j < Faker.RandomNumber.Next(utils.FileDayInterval.getDaysFileMigrationInterval()[(int)dateCursor.DayOfWeek].min, utils.FileDayInterval.getDaysFileMigrationInterval()[(int)dateCursor.DayOfWeek].max); j++)
                 {
                     
-                    NewMetadata(context, ProcessID + i, dateCursor, serviceTaken[Faker.RandomNumber.Next(0, serviceTaken.Length - 1)], plateformTaken[Faker.RandomNumber.Next(0, plateformTaken.Length - 1)], j);
+                    //NewMetadata(context, ProcessID + i, dateCursor, serviceTaken[Faker.RandomNumber.Next(0, serviceTaken.Length - 1)], plateformTaken[Faker.RandomNumber.Next(0, plateformTaken.Length - 1)], j);
                 }
-                dateCursor = dateCursor.AddDays(1);
             }
         }
 
@@ -62,9 +62,9 @@ namespace Controller
                 RocIsfileexist = "OUI",
                 RocCopySuccess = 1,
                 RocPf = plateform,
-                RocDateToExport = date_insertion.ToString("yyyy-mm-dd"),
+                RocDateToExport = date_insertion.ToString("yyyy-MM-dd"),
                 RocDateRunProcess = date_insertion,
-                RocFlagRetour = (DateTime.Compare(date_insertion, date_insertion) == 0) ? null : (Faker.RandomNumber.Next(-5, 110) > 0) ? "OK_TO_DELETE" : "NO_RETOUR"
+                RocFlagRetour = (DateTime.Compare(date_insertion, DateTime.Today) == 0) ? null : (Faker.RandomNumber.Next(-5, 110) > 0) ? "OK_TO_DELETE" : "NO_RETOUR"
             };
 
             try
