@@ -50,6 +50,9 @@ namespace Controller
                     
                     NewMetadata(context, ProcessID + i, dateCursor, serviceTaken[Faker.RandomNumber.Next(0, serviceTaken.Length - 1)], plateformTaken[Faker.RandomNumber.Next(0, plateformTaken.Length - 1)], j);
                 }
+                Console.WriteLine($"Saving Data Start [{ProcessID + i}] : {DateTime.Now.Hour}:{DateTime.Now.Minute}::{DateTime.Now.Second}");
+                context.SaveChanges(); // Save changes to the database
+                Console.WriteLine($"Saving Data End [{ProcessID + i}] : {DateTime.Now.Hour}:{DateTime.Now.Minute}::{DateTime.Now.Second}");
             }
         }
 
@@ -70,7 +73,7 @@ namespace Controller
             try
             {
                 context.RocMetadata.Add(_temp);
-                context.SaveChanges(); // Save changes to the database
+                
                 Console.WriteLine($"[{i}] : Import Export Metadata created.");
             }
             catch (Exception e)
