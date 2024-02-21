@@ -64,7 +64,7 @@ namespace Controller
                 RocPf = plateform,
                 RocDateToExport = date_insertion.ToString("yyyy-MM-dd"),
                 RocDateRunProcess = date_insertion,
-                RocFlagRetour = (DateTime.Compare(date_insertion, DateTime.Today) == 0) ? null : (Faker.RandomNumber.Next(-5, 200) > 0) ? "OK_TO_DELETE" : "NO_RETOUR"
+                RocFlagRetour = (DateTime.Compare(date_insertion, DateTime.Today) == 0) ? null : (Faker.RandomNumber.Next(-5, 500) > 0) ? "OK_TO_DELETE" : "NO_RETOUR"
             };
 
             try
