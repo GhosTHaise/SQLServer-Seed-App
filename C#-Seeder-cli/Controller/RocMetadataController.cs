@@ -12,8 +12,6 @@ namespace Controller
 
         public void GenerateRocMetadata()
         {
-            //Console.WriteLine("Please enter the number of Day to be generated:");
-            //int userInput = int.Parse(Console.ReadLine() ?? "0");
             String[] PF = context.RocPfs.Select(cc => cc.RocPfname).ToArray<string>();
             int? maxProcessIdStored = context.RocMetadata.Max(m => m.RocRunProcessId) ?? null;
             if (maxProcessIdStored != null)
@@ -47,7 +45,6 @@ namespace Controller
                 Console.WriteLine($"[{ProcessID + i}] -> {i} : {Faker.RandomNumber.Next(utils.FileDayInterval.getDaysFileMigrationInterval()[(int)dateCursor.DayOfWeek].min, utils.FileDayInterval.getDaysFileMigrationInterval()[(int)dateCursor.DayOfWeek].max)}({(int)dateCursor.DayOfWeek})");
                 for (int j = 0; j < Faker.RandomNumber.Next(utils.FileDayInterval.getDaysFileMigrationInterval()[(int)dateCursor.DayOfWeek].min, utils.FileDayInterval.getDaysFileMigrationInterval()[(int)dateCursor.DayOfWeek].max); j++)
                 {
-                    
                     NewMetadata(context, ProcessID + i, dateCursor, serviceTaken[Faker.RandomNumber.Next(0, serviceTaken.Length - 1)], plateformTaken[Faker.RandomNumber.Next(0, plateformTaken.Length - 1)], j);
                 }
                 Console.WriteLine($"Saving Data Start [{ProcessID + i}] : {DateTime.Now.Hour}:{DateTime.Now.Minute}::{DateTime.Now.Second}");
